@@ -17,6 +17,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :development do
@@ -34,7 +35,7 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
-  gem 'pg', '0.15.1'
+  gem 'pg'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
