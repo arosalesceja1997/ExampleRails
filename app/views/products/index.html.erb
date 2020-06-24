@@ -5,6 +5,7 @@
       <th>Nombre</th>
       <th>Descripcion</th>
       <th>Precio</th>
+      <th>Activo</th>
     </thead>
   </tr>
   <% @products.each do |product| %>
@@ -12,6 +13,7 @@
     <td><%= product.name %></td>
     <td><%= product.description %></td>
     <td><%= product.price %></td>
+    <td><%= product.activo %></td>
     <td>
       <%= link_to "Editar", edit_product_path(product) %>
       <%= link_to "Eliminar", product, method: :delete, data: {confirm: "Deseas eliminar el articulo"} %>

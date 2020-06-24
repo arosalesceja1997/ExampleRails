@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'welcome#index'
 
-  get '/products', to: 'products#index'
+  get '/products', to: 'products#index', as: 'showproducts'
   get '/products/new', to: 'products#new'
   get '/products/edit', to: 'products#edit'
   get '/products/:id', to: 'products#show', as: 'productos'
