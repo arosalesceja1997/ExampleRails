@@ -3,10 +3,12 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    new
+    edit
   end
 
   def new
-    @product = Product.new
+    @newproduct = Product.new
   end
 
   def create
@@ -19,7 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @editproduct = Product.find(params[:id])
   end
 
   def update

@@ -1,27 +1,52 @@
-<h1>Listado de productos</h1>
-<table>
-  <tr>
-    <thead>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>Precio</th>
-      <th>Activo</th>
-    </thead>
-  </tr>
-  <% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.description %></td>
-    <td><%= product.price %></td>
-    <td><%= product.activo %></td>
-    <td>
-      <%= link_to "Editar", edit_product_path(product) %>
-      <%= link_to "Eliminar", product, method: :delete, data: {confirm: "Deseas eliminar el articulo"} %>
-    </td>
-  </tr>
-  <% end %>
-</table>
-
-<div>
-  <%= link_to "Agregar", "products/new" %>
+<div class="row">
+  <div class="col-4">
+      <% x = @newproduct %>
+      <%= form_for x do |j| %>
+        <div class="form-group">
+          <%= j.label :name%>
+          <%= j.text_field :name, {:class => "form-control"}%>
+        </div>
+        <div class="form-group">
+          <%= j.label :description%>
+          <%= j.text_area :description, {:class => "form-control"}%>
+        </div>
+        <div class="form-group">
+          <%= j.label :price %>
+          <%= j.number_field :price, {:class => "form-control"}%>
+        </div>
+        <div class="form-group">
+          <%= j.label :activo %>
+          <%= j.text_area  :activo, {:class => "form-control"}%>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Agregar" class="btn btn-success">
+        </div>
+      <% end %>
+  </div>
+  <div class="col-8">
+    <h1>Listado de productos</h1>
+    <table class="table">
+      <tr>
+        <thead>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Activo</th>
+          <th scope="col"></th>
+        </thead>
+      </tr>
+      <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.activo %></td>
+        <td>
+          <%= link_to "Editar", edit_product_path(product), {:class => "btn btn-warning"} %>
+          <%= link_to "Eliminar", product, method: :delete, data: {confirm: "Deseas eliminar el articulo"}, :class => "btn btn-danger"%>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

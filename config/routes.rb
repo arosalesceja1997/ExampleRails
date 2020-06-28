@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/products', to: 'products#index', as: 'showproducts'
-  get '/products/new', to: 'products#new'
-  get '/products/edit', to: 'products#edit'
-  get '/products/:id', to: 'products#show', as: 'productos'
-  post '/products/:id/edit', to: 'products#create'
+  # get '/products/new', to: 'products#new'
+  # get '/products/edit', to: 'products#edit'
+  # get '/products/:id', to: 'products#show', as: 'productos'
+  # post '/products/:id/edit', to: 'products#create'
   patch '/products/:id', to: 'products#update'
   delete '/products/:id', to: 'products#destroy'
 end
