@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     new
-    edit
   end
 
   def new
@@ -21,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @editproduct = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def update
